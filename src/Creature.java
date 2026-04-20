@@ -14,8 +14,12 @@ public class Creature {
         }
 
         // otherwise, do damage between 10-20
+        return mainAttack();
+    }
+
+    public float mainAttack() {
         float power = Rand.randomFloat(10, 20);
-        action = name + " attacked with power " + power + "!";
+        action = name + " attacked! (Power: " + power + ")";
         return power;
     }
 
