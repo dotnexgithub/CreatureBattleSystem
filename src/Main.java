@@ -19,6 +19,6 @@ public class Main {
         BattleSystem battleSystem = new BattleSystem();
 
         // run the battle
-        battleSystem.battle(a, b, c, d);
+        battleSystem.battleFFA(a, b, c, d);
     }
 }

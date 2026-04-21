@@ -2,7 +2,7 @@ import java.sql.SQLOutput;
 
 public class BattleSystem {
     // use varargs to get an array of Creatures to accept indefinite amount
-    public void battle(Creature... creatures) {
+    public void battleFFA(Creature... creatures) {
         // Set a and b to be any random creature
 
         Creature a, b, lastAttacker = new Creature();
@@ -10,7 +10,7 @@ public class BattleSystem {
             do {
                 a = getRandomAliveCreature(creatures);
                 b = getRandomAliveCreature(creatures);
-            } while (a == b && lastAttacker == a);
+            } while (a == b || lastAttacker == a);
 
             float attackPower = a.attack();
             b.defend(attackPower);

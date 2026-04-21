@@ -22,7 +22,6 @@ public class Creature {
         action = name + " attacked! (Power: " + power + ")";
         return power;
     }
-
     public void defend(float incomingPower) {
 
         // 10 % chance of reducing damage taken

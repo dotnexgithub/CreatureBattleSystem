@@ -6,8 +6,4 @@ public class FriesCreature extends Creature {
         return power;
     }
 
-    @Override
-    public void defend(float incomingPower) {
-        float randFloat = Rand.randomFloat(0.0001F, 1);
-    }
 }
