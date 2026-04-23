@@ -31,14 +31,14 @@ public class BattleSystem {
         System.out.println("Leaderboard");
         System.out.println("==============");
         for (Creature c : creatures) {
-            float perceivedHealth = (c.health > 0) ? c.health : 0;
-            System.out.println(c.name + " health: " + perceivedHealth);
+            float perceivedHealth = (c.getHealth() > 0) ? c.getHealth() : 0;
+            System.out.println(c.getName() + " health: " + perceivedHealth);
         }
     }
     private boolean isAllButOneDead(Creature[] creatures) {
         int creaturesAlive = 0;
         for (Creature c : creatures) {
-            if (c.health > 0) creaturesAlive++;
+            if (c.getHealth() > 0) creaturesAlive++;
         }
         return (creaturesAlive == 1);
     }
@@ -49,7 +49,7 @@ public class BattleSystem {
             do {
                 c = creatures[Rand.randomInt(0, creatures.length)];
             }
-            while (c.health <= 0);
+            while (c.getHealth() <= 0);
         }
         return c;
     }
