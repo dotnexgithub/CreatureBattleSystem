@@ -11,6 +11,26 @@ public class CondimentCreature extends Creature {
         action = super.getName() + " attacked with the sauce! (Power: " + power + ")";
         return power;
     }
+    @Override
+    public void defend(float incomingPower) {
+
+        // 10 % chance of reducing damage taken
+        if (Rand.randomInt(0, 10) < 1) {
+            incomingPower = incomingPower * 0.8f;
+            action = super.getName() + " encapsulated the attack, reducing damage taken to " + incomingPower;
+        }
+        else
+        {
+            action = super.getName() + " did not defend.";
+        }
+
+        super.reduceHealth(incomingPower);
+    }
+
+    @Override
+    public String readAction() {
+        return action;
+    }
 }
 
 

@@ -1,7 +1,7 @@
 public class Creature {
     private String name;
     private float health;
-    private String action;
+    private String action = "Default Action";
 
     public Creature(String name, float health) {
         this.name = name;
@@ -18,14 +18,13 @@ public class Creature {
         return name;
     }
 
-
     public Creature() {}
+
     // Returns the damage done by the Creature
     public float attack() {
 
         // 20% chance of missing
         if (Rand.randomInt(0, 10) < 2) {
-            action = name + " missed!";
             return 0;
         }
 
@@ -38,6 +37,7 @@ public class Creature {
         action = name + " attacked! (Power: " + power + ")";
         return power;
     }
+
     public void defend(float incomingPower) {
 
         // 10 % chance of reducing damage taken
@@ -53,9 +53,13 @@ public class Creature {
         health -= incomingPower;
     }
 
+    public void reduceHealth(float reduction) {
+        health -= reduction;
+    }
     public String readAction() {
         return action;
     }
+
 
     @Override
     public String toString() {

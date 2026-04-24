@@ -11,6 +11,27 @@ public class BurgerCreature extends Creature {
         action = super.getName() + " attacked with patties! (Power: " + power + ")";
         return power;
     }
+    @Override
+    public void defend(float incomingPower) {
+
+        // 10 % chance of reducing damage taken
+        if (Rand.randomInt(0, 10) < 1) {
+            incomingPower = incomingPower * 0.8f;
+            action = super.getName() + " softened with the bun, reducing damage taken to " + incomingPower;
+        }
+        else
+        {
+            action = super.getName() + " did not defend.";
+        }
+
+        super.reduceHealth(incomingPower);
+    }
+
+
+    @Override
+    public String readAction() {
+        return action;
+    }
 }
 
 
