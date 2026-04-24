@@ -22,13 +22,6 @@ public class Creature {
 
     // Returns the damage done by the Creature
     public float attack() {
-
-        // 20% chance of missing
-        if (Rand.randomInt(0, 10) < 2) {
-            return 0;
-        }
-
-        // otherwise, do damage between 10-20
         return mainAttack();
     }
 
